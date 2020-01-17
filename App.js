@@ -15,6 +15,7 @@ export default class App extends React.Component {
         kmInput1: '',
         kmInput2: '',
         title:'',
+        bomp: " ",
 
       tur: [
         {id: 1, title: 'Lyshovden', km: 20, bomP: 1, done: true},
@@ -31,7 +32,7 @@ export default class App extends React.Component {
           id:tur1.length +1,
           title:this.state.title,
           km:kmT,
-          bomP:0,
+          bomP:this.state.bomP,
           done:false,
       })
 
@@ -61,6 +62,8 @@ export default class App extends React.Component {
           kmInput1={this.state.kmInput1}
           kmInput2={this.state.kmInput2}
           addNewKm={this.ny}
+
+
           />
             <Text style={styles.km}>  Distanse: {kmTotal} km
             </Text>

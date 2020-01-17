@@ -20,6 +20,11 @@ const inputBar = (props) => {
 
                 />
 
+                <TextInput
+                style={styles.input}
+
+                />
+
         </View>
     )
 }
