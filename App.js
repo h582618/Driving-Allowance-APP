@@ -1,5 +1,5 @@
 import React,{Component } from 'react';
-import {StyleSheet, Text, TouchableOpacity, View,FlatList} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, FlatList, TextInput} from 'react-native';
 import Header from "./components/Header";
 import InputBar from "./components/Input";
 import Lokasjon from "./components/Lokasjon";
@@ -32,7 +32,7 @@ export default class App extends React.Component {
           id:tur1.length +1,
           title:this.state.title,
           km:kmT,
-          bomP:this.state.bomP,
+          bomP:this.state.bomp,
           done:false,
       })
 
@@ -65,6 +65,14 @@ export default class App extends React.Component {
 
 
           />
+            <Text style={styles.text}> Bompenger </Text>
+            <TextInput
+                style={styles.input}
+                onChangeText={bomp => this.setState({bomp:bomp})}
+                value={this.state.bomp}
+
+            />
+
             <Text style={styles.km}>  Distanse: {kmTotal} km
             </Text>
 
@@ -102,7 +110,7 @@ const styles = StyleSheet.create({
   },
     text: {
         color:'black',
-        fontSize:20,
+        fontSize:15,
         fontWeight:'900',
         textTransform:'uppercase',
         padding:15,
@@ -128,5 +136,10 @@ const styles = StyleSheet.create({
         color: '#171717',
         fontSize:18,
         fontWeight:'700'
+    },
+    input : {
+        backgroundColor: '#F3F3F3',
+        fontSize:30,
+        height: 40
     }
 });
