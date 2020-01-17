@@ -48,7 +48,8 @@ const styles = StyleSheet.create ({
         textTransform:'uppercase',
         padding:15,
         paddingTop:30,
-    }
+    },
+
 });
 
 export default inputBar;

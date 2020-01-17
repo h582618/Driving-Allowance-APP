@@ -141,5 +141,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F3F3F3',
         fontSize:30,
         height: 40
-    }
+    },
+
 });
