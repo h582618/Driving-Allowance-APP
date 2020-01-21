@@ -7,7 +7,7 @@ const Lokasjon = (props) => {
             <Text style={styles.text}> Lokasjon </Text>
             <TextInput
                 style={styles.input}
-                onChangeText={(lokasjon) => props.lokasjonChange(lokasjon)}
+                onChangeText={(title) => props.lokasjonChange(title)}
                 value={props.title}
 
             />

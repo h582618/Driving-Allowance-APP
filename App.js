@@ -15,11 +15,11 @@ export default class App extends React.Component {
         kmInput1: '',
         kmInput2: '',
         title:'',
-        bomp: " ",
+        bomp:' ',
 
       tur: [
         {id: 1, title: 'Lyshovden', km: 20, bomP: 1, done: true},
-        {id: 2, title: 'Ormhaugen', km: 50, bomP: 2, done: false},
+        {id: 2, title: 'Ormhaugen', km: 50, bomP: 2, done: true},
       ]
     }
   }
@@ -33,10 +33,12 @@ export default class App extends React.Component {
           title:this.state.title,
           km:kmT,
           bomP:this.state.bomp,
-          done:false,
+          done:true,
       })
-
-
+      this.setState({kmInput1:''})
+      this.setState({kmInput2:''})
+      this.setState({title:''})
+      this.setState({bomp:''})
   }
 
 
@@ -54,7 +56,8 @@ export default class App extends React.Component {
           {statusbar}
           <Header title="Get kjøring"/>
           <Lokasjon
-          lokasjonChange={lokasjon => this.setState({title:lokasjon})}
+          lokasjonChange={title => this.setState({title:title})}
+          title={this.state.title}
           />
           <InputBar
           textChange={kmInput1 => this.setState({kmInput1:kmInput1})}
@@ -65,24 +68,26 @@ export default class App extends React.Component {
 
 
           />
+          <View style={styles.bomp}>
             <Text style={styles.text}> Bompenger </Text>
             <TextInput
                 style={styles.input}
                 onChangeText={bomp => this.setState({bomp:bomp})}
                 value={this.state.bomp}
-
             />
+              <TouchableOpacity
+                  style={styles.addButton}
+                  onPress={this.ny}
 
+              >
+                  <Text style={styles.addButtonText}>ADD</Text>
+              </TouchableOpacity>
+
+          </View>
             <Text style={styles.km}>  Distanse: {kmTotal} km
             </Text>
 
-            <TouchableOpacity
-                style={styles.addButton}
-                onPress={this.ny}
 
-            >
-                <Text style={styles.addButtonText}>ADD</Text>
-            </TouchableOpacity>
             <FlatList
                 data={this.state.tur}
                 keyExtractor={(item, index) => index.toString()}
@@ -127,6 +132,7 @@ const styles = StyleSheet.create({
     addButton: {
         width: 100,
         height:50,
+        left:40,
         backgroundColor: '#FFCE00',
         alignItems: 'center',
         justifyContent: 'center',
@@ -140,7 +146,14 @@ const styles = StyleSheet.create({
     input : {
         backgroundColor: '#F3F3F3',
         fontSize:30,
-        height: 40
+        height: 50,
+        width: 50,
+
+
     },
+    bomp: {
+      display:'flex',
+        flexDirection:'row',
+    }
 
 });
