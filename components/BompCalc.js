@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         fontSize:28,
         fontWeight:'900',
         textTransform:'uppercase',
-        padding:20,
+        padding:20
     }
 });
 

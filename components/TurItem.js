@@ -17,7 +17,7 @@ export default class TurItem extends React.Component  {
                 <Text style={(turItem.done) ? styles.text : styles.text1}>
                     { turItem.title }, {turItem.km} km, {'\n'}{turItem.bomP} bomstasjoner,
                     {'    '}
-                    {(turItem.km * 4)+turItem.bomP} kr
+                    {(turItem.km *4 + parseInt(turItem.bomP)*22)} kr
                 </Text>
             </TouchableOpacity>
 
