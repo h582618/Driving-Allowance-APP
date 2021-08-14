@@ -41,6 +41,8 @@ export default class App extends React.Component {
       this.setState({bomp:''})
   }
 
+ //  bompCalc = () => {
+ // }
 
 
   render() {
@@ -51,10 +53,9 @@ export default class App extends React.Component {
       let km2 = this.state.kmInput2;
       const kmTotal = (km2.length >= km1.length)  ? <Text> {kmT} </Text> : <Text> </Text>
      return (
-
         <View style={styles.container}>
           {statusbar}
-          <Header title="Get kjøring"/>
+          <Header title="Kjøregodtgjørelse"/>
           <Lokasjon
           lokasjonChange={title => this.setState({title:title})}
           title={this.state.title}
