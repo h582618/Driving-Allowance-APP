@@ -7,4 +7,4 @@ User enters what location he has worked at, kilometers on the vehicle before and
 
 For further development i would add integration with google maps, store the data in an database.
 
-![alt text](https://github.com/h582618/getKjoring/blob/master/drivingHours.PNG) =100x150
+<img src="https://github.com/h582618/getKjoring/blob/master/drivingHours.PNG" alt="drawing" width="200"/>
